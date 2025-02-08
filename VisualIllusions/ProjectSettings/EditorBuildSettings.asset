@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Welcome_Screen.unity
+    guid: f788aa47666350b4588430352d43fc57
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: cdf4d3f0ff889194abd93986e0befc63
+  - enabled: 1
+    path: "Assets/Scenes/Perspektivisch_T\xE4uschung.unity"
+    guid: 8a05510bda691ef46b0f5d8e124cb3d5
+  - enabled: 1
+    path: Assets/Scenes/Psychologische_Illusion.unity
+    guid: e4ff9c1b9478b094c8edbee564947a45
+  - enabled: 1
+    path: "Assets/Scenes/R\xE4umliche_Illusion.unity"
+    guid: ff32b9140d49e45418f93aaf65a3ef89
+  - enabled: 1
+    path: "Assets/Scenes/Gr\xF6\xDFen_Illusion.unity"
+    guid: 4380f1471c977e8478fea315e89d8d58
   m_configObjects: {}
