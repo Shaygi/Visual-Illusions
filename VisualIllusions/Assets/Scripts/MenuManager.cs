@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI; // Falls du UI-Buttons verwendest
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
     public GameObject menu2;          // Zweiter Satz von Buttons (anfangs deaktiviert)
 
     [Header("Kamera-Einstellungen")]
-    public Camera mainCamera;         // Deine Hauptkamera
+    public Camera mainCamera;         // Hauptkamera
     public Transform cameraTarget;    // Zielposition/-rotation für den Vorwärtsschwenk
     public float cameraMoveDuration = 1f; // Dauer des Kameraschwenks
 
