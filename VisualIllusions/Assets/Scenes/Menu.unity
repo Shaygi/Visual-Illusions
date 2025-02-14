@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.42185828, g: 0.9433962, b: 0.66109765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2380,13 +2380,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952545672}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.38316077, z: -0, w: 0.9236817}
-  m_LocalPosition: {x: -63.459, y: 0.84, z: 3.484}
+  m_LocalRotation: {x: -0.020538224, y: -0.38318783, z: -0.015811559, w: 0.9233067}
+  m_LocalPosition: {x: -63.85, y: 1.11, z: 3.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -45.059, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.868, y: -45.059, z: -0.772}
 --- !u!1 &1007570717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2919,7 @@ Transform:
   m_GameObject: {fileID: 1505308328}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.74723256, z: -0, w: 0.6645627}
-  m_LocalPosition: {x: -62.51, y: 1.08, z: 3.3}
+  m_LocalPosition: {x: -63.24, y: 1.28, z: 3.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4004,8 +4004,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
