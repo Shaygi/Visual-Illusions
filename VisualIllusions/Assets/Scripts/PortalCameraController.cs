@@ -15,13 +15,14 @@ public class PortalCameraController : MonoBehaviour
     void LateUpdate()
     {
         // Berechne die Position des Spielers relativ zum Eingang-Portal
-        Vector3 relativePos = entrancePortal.InverseTransformPoint(playerCamera.position);
+        Vector3 relativePos = playerCamera.position - exitPortal.position;
+        transform.position = entrancePortal.position + relativePos;
 
-        // Transformiere die relative Position in den Raum des Ausgang-Portals
-        transform.position = exitPortal.TransformPoint(relativePos);
+        float angularDifferencePortalRotation = Quaternion.Angle(entrancePortal.rotation, exitPortal.rotation);
 
-        // Berechne die relative Rotation
-        Quaternion relativeRot = Quaternion.Inverse(entrancePortal.rotation) * playerCamera.rotation;
-        transform.rotation = exitPortal.rotation * relativeRot;
+        Quaternion portalRotationDifference = Quaternion.AngleAxis(angularDifferencePortalRotation, Vector3.up);
+
+        Vector3 cameraDirection = portalRotationDifference * playerCamera.forward;
+        transform.rotation = Quaternion.LookRotation(cameraDirection, Vector3.up);
     }
 }
