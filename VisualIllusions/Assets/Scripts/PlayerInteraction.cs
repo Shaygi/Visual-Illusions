@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float maxDistance = 5f;            // Wie weit der Raycast reicht
+    public float maxDistance = 5f;
     private Camera playerCamera;
     private CombinedOutline currentCombinedOutline;
 
@@ -17,7 +17,7 @@ public class PlayerInteraction : MonoBehaviour
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
-            // Sucht im Hierarchie-Pfad des getroffenen Objekts nach CombinedOutline
+            // Suche im Hierarchie-Pfad des getroffenen Objekts nach CombinedOutline
             CombinedOutline combinedOutline = hit.collider.GetComponentInParent<CombinedOutline>();
 
             if (combinedOutline != null)
@@ -32,18 +32,17 @@ public class PlayerInteraction : MonoBehaviour
                     currentCombinedOutline.SetOutlineActive(true);
                 }
 
-                // Bei Drücken von E die Interaktion auslösen
+                // Bei Drücken von E alle "Interact"-Methoden aufrufen
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    // Hole das ButtonInteraction-Skript vom gleichen Objekt wie CombinedOutline
-                    ButtonInteraction buttonInteraction = currentCombinedOutline.GetComponent<ButtonInteraction>();
-                    if (buttonInteraction != null)
-                        buttonInteraction.Interact();
+                    // SendMessage ruft "Interact" in allen Komponenten dieses GameObjects auf,
+                    // sofern sie eine solche Methode besitzen.
+                    currentCombinedOutline.SendMessage("Interact", SendMessageOptions.DontRequireReceiver);
                 }
             }
             else
             {
-                // Kein interagierbares Objekt getroffen – Outline und Tooltip deaktivieren
+                // Kein interagierbares Objekt getroffen – Outline deaktivieren
                 if (currentCombinedOutline != null)
                 {
                     currentCombinedOutline.SetOutlineActive(false);
