@@ -3,15 +3,12 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public float maxDistance = 5f;            // Wie weit der Raycast reicht
-    public GameObject tooltipUI;              // Referenz zum Tooltip (UI-Element)
     private Camera playerCamera;
     private CombinedOutline currentCombinedOutline;
 
     private void Start()
     {
         playerCamera = Camera.main;
-        if (tooltipUI != null)
-            tooltipUI.SetActive(false);
     }
 
     private void Update()
@@ -35,10 +32,6 @@ public class PlayerInteraction : MonoBehaviour
                     currentCombinedOutline.SetOutlineActive(true);
                 }
 
-                // Tooltip anzeigen
-                if (tooltipUI != null)
-                    tooltipUI.SetActive(true);
-
                 // Bei Drücken von E die Interaktion auslösen
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -56,8 +49,6 @@ public class PlayerInteraction : MonoBehaviour
                     currentCombinedOutline.SetOutlineActive(false);
                     currentCombinedOutline = null;
                 }
-                if (tooltipUI != null)
-                    tooltipUI.SetActive(false);
             }
         }
         else
@@ -68,8 +59,6 @@ public class PlayerInteraction : MonoBehaviour
                 currentCombinedOutline.SetOutlineActive(false);
                 currentCombinedOutline = null;
             }
-            if (tooltipUI != null)
-                tooltipUI.SetActive(false);
         }
     }
 }
