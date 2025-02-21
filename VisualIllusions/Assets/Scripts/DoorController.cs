@@ -11,13 +11,8 @@ public class DoorController : MonoBehaviour
     public float doorMoveDistance = 2.0f;  // Distanz, um die die Türen bewegt werden
     public float moveDuration = 1.0f;      // Dauer der Bewegung in Sekunden
 
-    [Header("Optionale Knopf Einstellungen")]
+    [Header("Knopf Einstellungen (optional)")]
     public GameObject knob;  // Knopf-Objekt für Farbwechsel und Animation
-
-    [Header("Öffnungsrichtungen (lokal)")]
-    // Diese Richtungen wirken relativ zum Elternobjekt (und sollten nicht von der Türrotation beeinflusst werden)
-    public Vector3 leftDoorOpenDirection = Vector3.left;
-    public Vector3 rightDoorOpenDirection = Vector3.right;
 
     private bool doorsOpen = false;
     private Vector3 leftDoorClosedPos;
@@ -36,18 +31,30 @@ public class DoorController : MonoBehaviour
     {
         if (!doorsOpen)
         {
-            // Türen öffnen: 
-            // Für die linke Tür: Wir subtrahieren den Verschiebungsvektor, sodass sie in die entgegengesetzte Richtung von leftDoorOpenDirection geht.
-            StartCoroutine(MoveDoor(leftDoor, leftDoor.transform.localPosition, leftDoorClosedPos - leftDoorOpenDirection * doorMoveDistance, moveDuration));
-            // Rechte Tür bleibt unverändert: Sie bewegt sich in Richtung rightDoorOpenDirection.
-            StartCoroutine(MoveDoor(rightDoor, rightDoor.transform.localPosition, rightDoorClosedPos + rightDoorOpenDirection * doorMoveDistance, moveDuration));
+            // Türen öffnen:
+            // Linke Tür bewegt sich vom Ausgangspunkt um Vector3.left (nach links)
+            StartCoroutine(MoveDoor(leftDoor,
+                leftDoor.transform.localPosition,
+                leftDoorClosedPos + Vector3.left * doorMoveDistance,
+                moveDuration));
+            // Rechte Tür bewegt sich vom Ausgangspunkt um Vector3.right (nach rechts)
+            StartCoroutine(MoveDoor(rightDoor,
+                rightDoor.transform.localPosition,
+                rightDoorClosedPos + Vector3.right * doorMoveDistance,
+                moveDuration));
             doorsOpen = true;
         }
         else
         {
             // Türen schließen: Rückkehr zur gespeicherten Ausgangsposition
-            StartCoroutine(MoveDoor(leftDoor, leftDoor.transform.localPosition, leftDoorClosedPos, moveDuration));
-            StartCoroutine(MoveDoor(rightDoor, rightDoor.transform.localPosition, rightDoorClosedPos, moveDuration));
+            StartCoroutine(MoveDoor(leftDoor,
+                leftDoor.transform.localPosition,
+                leftDoorClosedPos,
+                moveDuration));
+            StartCoroutine(MoveDoor(rightDoor,
+                rightDoor.transform.localPosition,
+                rightDoorClosedPos,
+                moveDuration));
             doorsOpen = false;
         }
 

@@ -57,7 +57,7 @@ public class PauseManager : MonoBehaviour
     {
         Application.Quit();
 #if UNITY_EDITOR
-        // Falls du im Editor spielst, beende auch den Play-Modus
+        // Falls im Editor gespielt wird, beende auch den Play-Modus
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
