@@ -32,8 +32,8 @@ public class PlayerInteraction : MonoBehaviour
                     currentCombinedOutline.SetOutlineActive(true);
                 }
 
-                // Bei Drücken von E alle "Interact"-Methoden aufrufen
-                if (Input.GetKeyDown(KeyCode.E))
+                // Bei linkem Mausklick alle "Interact"-Methoden aufrufen
+                if (Input.GetMouseButtonDown(0))
                 {
                     // SendMessage ruft "Interact" in allen Komponenten dieses GameObjects auf,
                     // sofern sie eine solche Methode besitzen.
