@@ -1,7 +1,7 @@
-Shader "Custom/HeatHaze" {
+ï»¿Shader "Custom/HeatHaze" {
     Properties {
         _NoiseTex ("Noise Texture", 2D) = "white" {} // Rauschtextur, z.B. Perlin Noise
-        _Distortion ("Distortion", Range(0,0.1)) = 0.05 // Verzerrungsintensität
+        _Distortion ("Distortion", Range(0,0.1)) = 0.05 // VerzerrungsintensitÃ¤t
         _Speed ("Speed", Range(0,10)) = 1 // Animationsgeschwindigkeit
     }
     SubShader {
@@ -13,15 +13,15 @@ Shader "Custom/HeatHaze" {
             #pragma vertex vert_img
             #pragma fragment frag
             #include "UnityCG.cginc"
-
-            sampler2D _GrabTexture; // Enthält den Bildschirm-Content
+       
+            sampler2D _GrabTexture; // EnthÃ¤lt den Bildschirm-Content
             sampler2D _NoiseTex;
             float _Distortion;
             float _Speed;
             
             // Der Fragment-Shader: Hier wird die Verzerrung berechnet
             fixed4 frag(v2f_img i) : SV_Target {
-                // Erzeuge eine Rauschkoordinate, skaliert für mehr Detail und animiert mit der Zeit
+                // Erzeuge eine Rauschkoordinate, skaliert fÃ¼r mehr Detail und animiert mit der Zeit
                 float2 noiseUV = i.uv * 10.0 + float2(_Time.y * _Speed, _Time.y * _Speed);
                 // Sample die Rauschtextur. Der Wert wird von [0,1] in [-1,1] umgerechnet.
                 float2 noise = tex2D(_NoiseTex, noiseUV).rg * 2.0 - 1.0;
