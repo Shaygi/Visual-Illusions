@@ -31113,7 +31113,7 @@ GameObject:
   - component: {fileID: 1023790907}
   - component: {fileID: 1023790906}
   - component: {fileID: 1023790911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrowingCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33352,7 +33352,7 @@ GameObject:
   - component: {fileID: 1092567194}
   - component: {fileID: 1092567198}
   - component: {fileID: 1092567199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShrinkingCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55866,7 +55866,7 @@ GameObject:
   - component: {fileID: 1855930283}
   - component: {fileID: 1855930282}
   - component: {fileID: 1855930287}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ConstantCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

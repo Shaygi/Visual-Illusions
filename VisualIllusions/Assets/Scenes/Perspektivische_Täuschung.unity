@@ -38702,7 +38702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupRange: 10
-  holdDistance: 2
+  holdDistance: 5
   moveSpeed: 10
   moveableLayer:
     serializedVersion: 2
