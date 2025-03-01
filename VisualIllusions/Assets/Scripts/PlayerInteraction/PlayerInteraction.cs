@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
     public float maxDistance = 5f;
-    public float sphereRadius = 0.5f; // Radius des SphereCasts, anpassen je nach Bedarf
+    public float sphereRadius = 0.5f; // Radius des SphereCasts
     public GameObject interactIcon;
 
     private Camera playerCamera;
@@ -23,54 +23,60 @@ public class PlayerInteraction : MonoBehaviour
         // Erstelle einen Ray aus der Mitte des Bildschirms
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-        // Verwende einen SphereCast, um einen Bereich abzufragen
-        if (Physics.SphereCast(ray, sphereRadius, out RaycastHit hit, maxDistance))
+        // Erfasse alle Treffer im SphereCast
+        RaycastHit[] hits = Physics.SphereCastAll(ray, sphereRadius, maxDistance);
+        CombinedOutline bestCombinedOutline = null;
+        float bestAngle = Mathf.Infinity; // Der kleinste Winkel (zwischen Ray-Richtung und Trefferpunkt) wird bevorzugt
+
+        foreach (var hit in hits)
         {
-            // Suche nach einem CombinedOutline im Hierarchie-Pfad des getroffenen Objekts
-            CombinedOutline combinedOutline = hit.collider.GetComponentInParent<CombinedOutline>();
-
-            if (combinedOutline != null)
+            CombinedOutline outline = hit.collider.GetComponentInParent<CombinedOutline>();
+            if (outline != null)
             {
-                if (currentCombinedOutline != combinedOutline)
-                {
-                    if (currentCombinedOutline != null)
-                        currentCombinedOutline.SetOutlineActive(false);
+                // Berechne den Winkel zwischen der Blickrichtung und der Richtung zum Trefferpunkt
+                Vector3 directionToHit = (hit.point - playerCamera.transform.position).normalized;
+                float angle = Vector3.Angle(ray.direction, directionToHit);
 
-                    currentCombinedOutline = combinedOutline;
-                    currentCombinedOutline.SetOutlineActive(true);
-                    hasInteracted = false;
-                }
-
-                // Zeige das Icon, falls noch nicht interagiert wurde
-                if (!hasInteracted && interactIcon != null && !interactIcon.activeSelf)
+                // Wähle den Treffer, der am nächsten an der Mitte liegt (kleinster Winkel)
+                if (angle < bestAngle)
                 {
-                    interactIcon.SetActive(true);
-                }
-
-                // Bei linkem Mausklick Interaktion ausführen und Icon ausblenden
-                if (Input.GetMouseButtonDown(0))
-                {
-                    currentCombinedOutline.SendMessage("Interact", SendMessageOptions.DontRequireReceiver);
-                    hasInteracted = true;
-                    if (interactIcon != null)
-                        interactIcon.SetActive(false);
+                    bestAngle = angle;
+                    bestCombinedOutline = outline;
                 }
             }
-            else
+        }
+
+        if (bestCombinedOutline != null)
+        {
+            // Wechsel das aktuell hervorgehobene Objekt, falls sich der Treffer ändert
+            if (currentCombinedOutline != bestCombinedOutline)
             {
-                // Kein interagierbares Objekt getroffen – deaktiviere Outline und Icon
                 if (currentCombinedOutline != null)
-                {
                     currentCombinedOutline.SetOutlineActive(false);
-                    currentCombinedOutline = null;
-                }
+
+                currentCombinedOutline = bestCombinedOutline;
+                currentCombinedOutline.SetOutlineActive(true);
+                hasInteracted = false;
+            }
+
+            // Zeige das Interaktions-Icon, wenn noch nicht interagiert wurde
+            if (!hasInteracted && interactIcon != null && !interactIcon.activeSelf)
+            {
+                interactIcon.SetActive(true);
+            }
+
+            // Bei Mausklick die Interaktion ausführen
+            if (Input.GetMouseButtonDown(0))
+            {
+                currentCombinedOutline.SendMessage("Interact", SendMessageOptions.DontRequireReceiver);
+                hasInteracted = true;
                 if (interactIcon != null)
                     interactIcon.SetActive(false);
             }
         }
         else
         {
-            // Kein Treffer – deaktiviere Outline und Icon
+            // Kein interagierbares Objekt im Fokus – deaktiviere Outline und Icon
             if (currentCombinedOutline != null)
             {
                 currentCombinedOutline.SetOutlineActive(false);

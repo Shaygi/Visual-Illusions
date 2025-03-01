@@ -9839,7 +9839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previewSprite: {fileID: 21300000, guid: 50b4cc535559b684e8d5ef5ea7d665f8, type: 3}
-  previewText: "Hier entdeckst du wie verschiedene psychologische illusionen ducrh
+  previewText: "Hier entdeckst du wie verschiedene psychologische Illusionen ducrh
     Post Processing umgesetzt werden k\xF6nnen."
   previewManager: {fileID: 871629487}
 --- !u!114 &2085479080
