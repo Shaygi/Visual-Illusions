@@ -9,12 +9,6 @@ public class MirrorReflection : MonoBehaviour
     // MirrorCamera: Die Kamera, die den Spiegel-Effekt darstellt
     public Transform PlayerCamera, MirrorCamera;
 
-    // Start-Methode: Wird einmalig beim Start des Spiels aufgerufen
-    void Start()
-    {
-        // Initialisierungen können hier vorgenommen werden, falls benötigt
-    }
-
     // Update-Methode: Wird in jedem Frame aufgerufen
     void Update()
     {

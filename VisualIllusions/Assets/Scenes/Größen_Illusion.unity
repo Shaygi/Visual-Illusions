@@ -1309,7 +1309,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2086845840}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 932725922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5140,7 +5140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 58}
+  m_AnchoredPosition: {x: 0, y: 32}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140084161
@@ -5163,7 +5163,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dynamische Gr\xF6\xDFenver\xE4nderung\nSimpel aber Wirkungsvoll\nKapitel "
+  m_text: "Dynamische Gr\xF6\xDFenver\xE4nderung\nKapitel 3.1.2\n\nDynamische Skallierung
+    durch das ann\xE4hern an Objekten"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5190,7 +5191,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.4
+  m_fontSize: 41.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5818,11 +5819,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Perspektiven
-
-    Proportionen
-
-    Relationen'
+  m_text: "Positionierung,\nProportionen\n&\nRelationen\nKapitel 3.1.1\n\nBeeinflussen
+    der Gr\xF6\xDFenwahrnehmung durch Positionierung, Proportionierung und Anordnung
+    von Objekten."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5849,7 +5848,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 27.6
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17345,7 +17344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 536222363}
   m_Layer: 0
-  m_Name: Tooltip (3)
+  m_Name: TooltipColorLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17360,12 +17359,12 @@ Transform:
   m_GameObject: {fileID: 536222362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.518463, y: 0.8555298, z: 12.414974}
+  m_LocalPosition: {x: 4.332676, y: -0.7212846, z: 18.951641}
   m_LocalScale: {x: 0.003563938, y: 0.003563938, z: 0.003563938}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 120154600}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2055535348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &538875546
 GameObject:
@@ -23690,7 +23689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 777326874}
   m_Layer: 0
-  m_Name: Tooltip (4)
+  m_Name: TooltipPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23705,12 +23704,12 @@ Transform:
   m_GameObject: {fileID: 777326873}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.438477, y: 0.8555298, z: -19.021027}
+  m_LocalPosition: {x: 0.25268936, y: -0.7212846, z: -12.484361}
   m_LocalScale: {x: 0.003563938, y: 0.003563938, z: 0.003563938}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1345257752}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2055535348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782387559
 GameObject:
@@ -28111,6 +28110,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926381494}
   m_Mesh: {fileID: 4300000, guid: 76e15ece664ee41ada45b8500a673f22, type: 3}
+--- !u!1 &932725921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932725922}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &932725922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932725921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 190.20001, y: 179, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 32421554}
+  - {fileID: 1077271482}
+  - {fileID: 1747499651}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933487045
 GameObject:
   m_ObjectHideFlags: 0
@@ -29630,7 +29663,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Hier findest du unterschiedliche M\xF6glichkeiten Gr\xF6\xDFen-Illusionen
-    zu Implementieren.\nNutze das Handbuch um die Implementationen besser zu verstehen. "
+    zu Implementieren.\nNutze das Handbuch (Kapitel 3) um die Implementationen besser
+    zu verstehen. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30781,7 +30815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003875613}
   m_Layer: 0
-  m_Name: Tooltip (1)
+  m_Name: TooltipDynamicSize
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30796,12 +30830,12 @@ Transform:
   m_GameObject: {fileID: 1003875612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3675232, y: 0.8555298, z: 2.2749748}
+  m_LocalPosition: {x: -10.55331, y: -0.7212846, z: 8.811641}
   m_LocalScale: {x: 0.003563938, y: 0.003563938, z: 0.003563938}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2081235682}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2055535348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005248765
 GameObject:
@@ -33037,7 +33071,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1235571496}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 932725922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39933,7 +39967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1307300797}
   m_Layer: 0
-  m_Name: Tooltip
+  m_Name: TooltipStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39947,13 +39981,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307300795}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.24, y: 0.53, z: 7.937}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -34.42579, y: -1.0468144, z: 14.473665}
   m_LocalScale: {x: 0.006869473, y: 0.006869473, z: 0.006869473}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 533311367}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2055535348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1312563910
 PrefabInstance:
@@ -42799,7 +42833,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ebbinghaus-Illusion\nRelevanz von Gr\xF6\xDFenrelationen"
+  m_text: "Ebbinghaus-Illusion\nKapitel 3.1.1.1\n\nSchrupf- und Wachstumswirkung
+    durch Komposition und Gr\xF6\xDFenrelationen"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -42826,10 +42861,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 41.2
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -43395,7 +43430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1399990262}
   m_Layer: 0
-  m_Name: Tooltip (2)
+  m_Name: TooltipPositionProportion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43410,12 +43445,12 @@ Transform:
   m_GameObject: {fileID: 1399990261}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.148468, y: 0.8555298, z: -3.3810272}
+  m_LocalPosition: {x: -1.0373192, y: -0.7212846, z: 3.1556387}
   m_LocalScale: {x: 0.003563938, y: 0.003563938, z: 0.003563938}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2088747051}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2055535348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1409442045
 GameObject:
@@ -45521,7 +45556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 58}
+  m_AnchoredPosition: {x: 0, y: 8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470635567
@@ -45544,7 +45579,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Farbe und Licht
+  m_text: "Farbe und Licht\nKapitel 3.1.2\n\nEinfluss von Licht und Farbe auf die
+    Gr\xF6\xDFenwirkung"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -45571,7 +45607,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 48
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52661,12 +52697,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747499649}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 301.24564, y: 156.59416, z: -36.08399}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 111.04562, y: -22.405838, z: -36.08399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 932725922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747525274
 GameObject:
@@ -53743,7 +53779,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Welche der beiden W\xFCrfel ist gr\xF6\xDFer?"
+  m_text: "Bewusste Positionierung\nKapitel 3.1.1.2\n\nGr\xF6\xDFenwirkung durch
+    Positionierung der Objekte"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -53770,7 +53807,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 49.8
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -56926,7 +56963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1898370868}
   m_Layer: 0
-  m_Name: Tooltip
+  m_Name: TooltipEbbinghaus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56941,12 +56978,12 @@ Transform:
   m_GameObject: {fileID: 1898370867}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.85, y: -1.339, z: -13.65}
+  m_LocalPosition: {x: 0.9135151, y: -0.64338636, z: -22.059605}
   m_LocalScale: {x: 0.0026177394, y: 0.0026177394, z: 0.0026177394}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 441234600}
-  m_Father: {fileID: 2079755460}
+  m_Father: {fileID: 2055535348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905451987
 GameObject:
@@ -62036,6 +62073,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049534584}
   m_Mesh: {fileID: 4300000, guid: 76e15ece664ee41ada45b8500a673f22, type: 3}
+--- !u!1 &2055535347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055535348}
+  m_Layer: 0
+  m_Name: Tooltips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055535348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055535347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.185787, y: 1.5768144, z: -6.536666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1307300797}
+  - {fileID: 1003875613}
+  - {fileID: 1399990262}
+  - {fileID: 777326874}
+  - {fileID: 1898370868}
+  - {fileID: 536222363}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2058825426
 GameObject:
   m_ObjectHideFlags: 0
@@ -63081,7 +63155,6 @@ Transform:
   - {fileID: 714466551}
   - {fileID: 614603741}
   - {fileID: 612869747}
-  - {fileID: 1898370868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081235681
@@ -64944,18 +65017,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1943593843}
-  - {fileID: 208891444}
   - {fileID: 1433631597}
+  - {fileID: 208891444}
   - {fileID: 1526870172}
-  - {fileID: 32421554}
-  - {fileID: 1003875613}
-  - {fileID: 1399990262}
-  - {fileID: 777326874}
-  - {fileID: 536222363}
-  - {fileID: 27275411}
-  - {fileID: 1747499651}
   - {fileID: 2079755460}
   - {fileID: 1627091043}
-  - {fileID: 1307300797}
-  - {fileID: 1077271482}
   - {fileID: 1168454742}
+  - {fileID: 2055535348}
+  - {fileID: 932725922}
+  - {fileID: 27275411}
