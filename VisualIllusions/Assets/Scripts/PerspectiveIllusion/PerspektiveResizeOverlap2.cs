@@ -1,21 +1,28 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PerspektiveResizingOverlap2 : MonoBehaviour
 {
     [Header("Components")]
-    public Transform target;            // Das Zielobjekt, das für die Skalierung ausgewählt werden soll
+    public Transform target;            // Das Zielobjekt, das fÃ¼r die Skalierung ausgewÃ¤hlt werden soll
 
     [Header("Parameters")]
     public LayerMask targetMask;        // Layer, um potenzielle Ziele zu treffen
     public LayerMask ignoreTargetMask;  // Layer, die beim Raycast und Overlap ignoriert werden
-    public float offsetFactor;          // Offset, damit das Objekt nicht direkt in die Wand gedrückt wird
+    public float offsetFactor;          // Offset, damit das Objekt nicht direkt in die Wand gedrÃ¼ckt wird
 
     [Header("Collision Settings")]
-    public int collisionResolutionIterations = 3; // Anzahl der Iterationen zur Kollisionsauflösung
-    public float collisionLerpSpeed = 0.2f;         // Lerp-Geschwindigkeit für sanftere Anpassungen
+    public int collisionResolutionIterations = 3; // Anzahl der Iterationen zur KollisionsauflÃ¶sung
+    public float collisionLerpSpeed = 0.2f;         // Lerp-Geschwindigkeit fÃ¼r sanftere Anpassungen
 
-    float originalDistance;             // Ursprüngliche Entfernung zwischen Kamera und Ziel
-    float originalScale;                // Ursprüngliche Skalierung des Ziels vor der Anpassung
+    [Header("Scale Limits")]
+    public float minScale = 0.1f;  // Mindestskala, damit das Objekt nicht zu klein wird
+    public float maxScale = 10.0f; // Maximalskala, damit das Objekt nicht zu groÃŸ wird
+
+    [Header("Distance Settings")]
+    public float minDistanceToCamera = 0.5f;  // Mindestabstand, um zu verhindern, dass das Objekt zu nah an die Kamera kommt
+
+    float originalDistance;             // UrsprÃ¼ngliche Entfernung zwischen Kamera und Ziel
+    float originalScale;                // UrsprÃ¼ngliche Skalierung des Ziels vor der Anpassung
     Vector3 targetScale;                // Skalierung, die dem Objekt in jedem Frame zugewiesen wird
 
     void Start()
@@ -32,7 +39,7 @@ public class PerspektiveResizingOverlap2 : MonoBehaviour
 
     void HandleInput()
     {
-        // Überprüfe, ob die linke Maustaste gedrückt wurde
+        // ÃœberprÃ¼fe, ob die linke Maustaste gedrÃ¼ckt wurde
         if (Input.GetMouseButtonDown(0))
         {
             if (target == null)
@@ -43,23 +50,23 @@ public class PerspektiveResizingOverlap2 : MonoBehaviour
                     // Setze die Zielvariable auf das Transform-Objekt, das durch den Raycast getroffen wurde
                     target = hit.transform;
 
-                    // Deaktiviere die Physik für das Objekt
+                    // Deaktiviere die Physik fÃ¼r das Objekt
                     target.GetComponent<Rigidbody>().isKinematic = true;
 
                     // Berechne die Entfernung zwischen der Kamera und dem Objekt
                     originalDistance = Vector3.Distance(transform.position, target.position);
 
-                    // Speichere die ursprüngliche Skalierung des Objekts in der Variable originalScale
+                    // Speichere die ursprÃ¼ngliche Skalierung des Objekts in der Variable originalScale
                     originalScale = target.localScale.x;
 
-                    // Setze die Zielskala vorübergehend auf den Originalwert
+                    // Setze die Zielskala vorÃ¼bergehend auf den Originalwert
                     targetScale = target.localScale;
                 }
             }
             // Falls bereits ein Ziel vorhanden ist
             else
             {
-                // Aktiviere die Physik für das Zielobjekt wieder
+                // Aktiviere die Physik fÃ¼r das Zielobjekt wieder
                 target.GetComponent<Rigidbody>().isKinematic = false;
 
                 // Setze die Zielvariable auf null
@@ -90,10 +97,20 @@ public class PerspektiveResizingOverlap2 : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, ignoreTargetMask))
         {
             Vector3 desiredPosition = hit.point - transform.forward * offsetFactor * targetScale.x;
-            // Interpoliere die Position für eine sanftere Anpassung
+
+            // Berechne den Abstand von der Kamera zur gewÃ¼nschten Position
+            float distanceToCamera = Vector3.Distance(transform.position, desiredPosition);
+
+            // Stelle sicher, dass das Objekt nicht zu nah an die Kamera kommt
+            if (distanceToCamera < minDistanceToCamera)
+            {
+                desiredPosition = transform.position + transform.forward * minDistanceToCamera;
+            }
+
+            // Interpoliere die Position fÃ¼r eine sanftere Anpassung
             target.position = Vector3.Lerp(target.position, desiredPosition, collisionLerpSpeed);
 
-            // Iterative Kollisionsauflösung
+            // Iterative KollisionsauflÃ¶sung
             for (int i = 0; i < collisionResolutionIterations; i++)
             {
                 Collider[] overlaps = Physics.OverlapBox(target.position, halfExtents, target.rotation, ignoreTargetMask);
@@ -115,14 +132,15 @@ public class PerspektiveResizingOverlap2 : MonoBehaviour
 
             // Berechne die aktuelle Entfernung zwischen der Kamera und der (eventuell korrigierten) Zielposition
             float currentDistance = Vector3.Distance(transform.position, target.position);
-
-            // Berechne das Verhältnis zwischen der aktuellen Entfernung und der ursprünglichen Entfernung
+            // Berechne das VerhÃ¤ltnis zwischen der aktuellen Entfernung und der ursprï¿½nglichen Entfernung
             float s = currentDistance / originalDistance;
 
-            // Aktualisiere die Skalierung basierend auf diesem Verhältnis
+            // Begrenze die Skalierung innerhalb des zulÃ¤ssigen Bereichs
+            s = Mathf.Clamp(s * originalScale, minScale, maxScale);
+
+            // Setze die Skalierung fÃ¼r das Zielobjekt, multipliziert mit der ursprÃ¼nglichen Skalierung
             targetScale = new Vector3(s, s, s);
-            // Setze die Skalierung für das Zielobjekt, multipliziert mit der ursprünglichen Skalierung
-            target.localScale = targetScale * originalScale;
+            target.localScale = targetScale;
         }
     }
 }

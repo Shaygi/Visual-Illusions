@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    [Header("Game UI")]
+    [Tooltip("Das Panel, das die Spiel-UI enthält.")]
+    public GameObject gameUI;
+
     [Header("Pause Menü UI")]
     [Tooltip("Das Panel, das das Pause-Menü enthält.")]
     public GameObject pauseMenuUI;
@@ -27,6 +31,7 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame()
     {
+        gameUI.SetActive(false);
         pauseMenuUI.SetActive(true);  // Zeige das Pause-Menü
         Time.timeScale = 0f;          // Pausiere das Spiel
         isPaused = true;
@@ -37,6 +42,7 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        gameUI.SetActive(true);
         pauseMenuUI.SetActive(false); // Verberge das Pause-Menü
         Time.timeScale = 1f;          // Setze das Spiel fort
         isPaused = false;
