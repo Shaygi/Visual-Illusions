@@ -43,6 +43,7 @@ Assets/
 │   └── PsychologicalIllusion/       # Skripte für psychologische Illusionen
 ├── Materials/                       # Materialien
 └── RenderTextures/                  # Rendertexturen
+```
 
 ## Verwendung
 1. Öffnen Sie das Projekt in Unity.
