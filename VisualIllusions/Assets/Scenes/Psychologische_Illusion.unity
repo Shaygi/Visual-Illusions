@@ -7740,11 +7740,6 @@ MonoBehaviour:
     leftDoorClosedPos: {x: 0, y: 0, z: 0}
     rightDoorClosedPos: {x: 0, y: 0, z: 0}
     doorsOpen: 0
-  - leftDoor: {fileID: 882089118}
-    rightDoor: {fileID: 417747587}
-    leftDoorClosedPos: {x: 0, y: 0, z: 0}
-    rightDoorClosedPos: {x: 0, y: 0, z: 0}
-    doorsOpen: 0
   doorMoveDistance: 2
   moveDuration: 1
   leftDoorMovement: 0
@@ -7836,11 +7831,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 409034, guid: a4c18952442944083b1fddc06ba477c2, type: 3}
   m_PrefabInstance: {fileID: 416472324}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &417747587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 192030, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
-  m_PrefabInstance: {fileID: 78225597}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &417747588 stripped
 Transform:
@@ -17166,11 +17156,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76d2d3504ddb4847940a815cad04644, type: 3}
---- !u!1 &882089118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 192030, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
-  m_PrefabInstance: {fileID: 1342041104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &882089119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 421664, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
