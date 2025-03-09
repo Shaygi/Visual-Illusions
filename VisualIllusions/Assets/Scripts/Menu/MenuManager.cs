@@ -40,6 +40,15 @@ public class MenuManager : MonoBehaviour
         }));
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        // Falls im Editor gespielt wird, beende auch den Play-Modus
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
     // Diese Methode wird vom OnClick-Event des Zurück-Buttons in Menu2 aufgerufen
     public void OnBackButtonClicked()
     {
